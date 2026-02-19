@@ -9,9 +9,9 @@ export function Grid() {
   return (
     <div className="relative z-0 flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-purple-50 via-violet-50 to-fuchsia-50 dark:bg-gradient-to-br dark:from-black-100 dark:via-black-100 dark:to-purple-900/20">
       {/* Theme Toggle */}
-      <div className="absolute top-5 right-5 z-50">
+      {/* <div className="absolute top-5 right-5 z-50">
         <ThemeToggle />
-      </div>
+      </div> */}
       
       {/* Grid Background - Thinner lines (0.5px) */}
       <div
@@ -62,7 +62,10 @@ export function Grid() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <a href="#about">
+              <a   href="/resume/Abdulazeez_Kolawole_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <MagicButton
                   title="View Resume"
                   icon={<Navigation size={16} />}
