@@ -76,7 +76,7 @@ export const projects = [
     des: "A secure corporate internet banking platform designed for business users to manage accounts, initiate transactions, monitor cash flow, and access real-time financial insights through an intuitive, role-based dashboard.",
     img: "/cibDashboard.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    link: "https://cib.optimusbank.com:444/",
   },
   {
     id: 2,
@@ -84,7 +84,7 @@ export const projects = [
 des: "An internal administration dashboard for overseeing corporate accounts, managing user roles and permissions, approving transactions, and monitoring system activity within a secure banking environment.",
     img: "/cibAdmin.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    link: "CIB",
   },
   {
     id: 3,
@@ -92,7 +92,7 @@ des: "An internal administration dashboard for overseeing corporate accounts, ma
     des: "web and mobile platform for restaurants that centralizes menu management, reservations, and order processing.",
     img: "/optiservBg.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
+    link: "Optiserv",
   },
   {
     id: 4,
@@ -108,7 +108,7 @@ des: "An internal administration dashboard for overseeing corporate accounts, ma
     des: "A web-based waste management platform designed to support efficient waste collection, tracking, and disposal workflows through an intuitive user interface.",
     img: "/optimustechaidbg.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://kolawoleabdulazeez.github.io/Kodecamp-dizpose/",
+    link: "Optimus TechAid",
   },
     {
     id: 6,
@@ -116,7 +116,7 @@ des: "An internal administration dashboard for overseeing corporate accounts, ma
     des: "A web-based waste management platform designed to support efficient waste collection, tracking, and disposal workflows through an intuitive user interface.",
     img: "/bugtrackerbg.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://kolawoleabdulazeez.github.io/Kodecamp-dizpose/",
+    link: "",
   },
     {
     id: 7,
@@ -132,7 +132,7 @@ des: "An internal administration dashboard for overseeing corporate accounts, ma
     des: "A web-based waste management platform designed to support efficient waste collection, tracking, and disposal workflows through an intuitive user interface.",
     img: "/candeobg.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://kolawoleabdulazeez.github.io/rock-paper-X/",
+    link: "https://kolawoleabdulazeez.github.io/candeo/",
   },
     {
     id: 9,
@@ -140,7 +140,7 @@ des: "An internal administration dashboard for overseeing corporate accounts, ma
     des: "A web-based waste management platform designed to support efficient waste collection, tracking, and disposal workflows through an intuitive user interface.",
     img: "/wonderbg.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://kolawoleabdulazeez.github.io/rock-paper-X/",
+    link: "https://kolawoleabdulazeez.github.io/Wonderland/",
   },
 ];
 
