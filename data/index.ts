@@ -116,7 +116,7 @@ des: "An internal administration dashboard for overseeing corporate accounts, ma
     des: "A web-based waste management platform designed to support efficient waste collection, tracking, and disposal workflows through an intuitive user interface.",
     img: "/bugtrackerbg.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "",
+    link: "Bug Tracker",
   },
     {
     id: 7,
