@@ -55,7 +55,7 @@ export function Grid() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <a   href="/resume/Abdulazeez_Kolawole_Resume.pdf"
+              <a   href="/resume/Abdulazeez_Kolawole_NResume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
