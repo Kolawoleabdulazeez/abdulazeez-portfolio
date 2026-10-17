@@ -27,6 +27,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+        <head>
+    <script
+      dangerouslySetInnerHTML={{
+        __html:
+          "if(typeof self!=='undefined'&&!self.GPUShaderStage){self.GPUShaderStage={VERTEX:1,FRAGMENT:2,COMPUTE:4}}",
+      }}
+    />
+  </head>
+
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
