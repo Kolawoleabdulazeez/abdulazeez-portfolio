@@ -1,9 +1,9 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
-import { useThree, Canvas, extend } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { useThree, useFrame, Canvas, extend } from "@react-three/fiber";
+import { OrbitControls } from "three-stdlib";
 import countries from "@/data/globe.json";
 declare module "@react-three/fiber" {
   interface ThreeElements {
@@ -246,12 +246,45 @@ export function WebGLRendererConfig() {
   return null;
 }
 
+function Controls() {
+  const { camera, gl } = useThree();
+  const controlsRef = useRef<OrbitControls | null>(null);
+
+  useEffect(() => {
+    const controls = new OrbitControls(camera, gl.domElement);
+    controls.enablePan = false;
+    controls.enableZoom = false;
+    controls.minDistance = cameraZ;
+    controls.maxDistance = cameraZ;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 1;
+    controls.minPolarAngle = Math.PI / 3.5;
+    controls.maxPolarAngle = Math.PI - Math.PI / 3;
+    controlsRef.current = controls;
+
+    // let vertical swipes scroll the page instead of getting trapped by the globe
+    gl.domElement.style.touchAction = "pan-y";
+
+    return () => controls.dispose();
+  }, [camera, gl]);
+
+  useFrame(() => controlsRef.current?.update());
+
+  return null;
+}
+
 export function World(props: WorldProps) {
   const { globeConfig } = props;
-  const scene = new Scene();
-  scene.fog = new Fog(0xffffff, 400, 2000);
+
+  const scene = useMemo(() => {
+    const s = new Scene();
+    s.fog = new Fog(0xffffff, 400, 2000);
+    return s;
+  }, []);
+  const camera = useMemo(() => new PerspectiveCamera(50, aspect, 180, 1800), []);
+
   return (
-    <Canvas scene={scene} camera={new PerspectiveCamera(50, aspect, 180, 1800)}>
+    <Canvas scene={scene} camera={camera} dpr={[1, 2]}>
       <WebGLRendererConfig />
       <ambientLight color={globeConfig.ambientLight} intensity={0.6} />
       <directionalLight
@@ -268,20 +301,10 @@ export function World(props: WorldProps) {
         intensity={0.8}
       />
       <Globe {...props} />
-      <OrbitControls
-        enablePan={false}
-        enableZoom={false}
-        minDistance={cameraZ}
-        maxDistance={cameraZ}
-        autoRotateSpeed={1}
-        autoRotate={true}
-        minPolarAngle={Math.PI / 3.5}
-        maxPolarAngle={Math.PI - Math.PI / 3}
-      />
+      <Controls />
     </Canvas>
   );
 }
-
 export function hexToRgb(hex: string) {
   var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, function (m, r, g, b) {
